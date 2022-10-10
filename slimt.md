@@ -6363,7 +6363,7 @@ if SuperFastMode then
 else
  cac=wait
 end
-while cac(0.215) do 
+while cac(0.2) do 
  AttackNoCD(0.2)
 end
 end
@@ -6387,7 +6387,7 @@ for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 end
 local WE = Tab1:AddDropdown({
 	Name = "Select Weapon",
-	Value = Wapon, -- ค่าที่จะให้มันเลือก
+	Value = false, -- ค่าที่จะให้มันเลือก
 	List = Wapon,
 	MultiSelect = false,
 	Callback = function(t)
@@ -6461,8 +6461,8 @@ if v.Name == Mon then
    y.Humanoid.WalkSpeed = 0
    v.Humanoid.JumpPower = 0
    y.Humanoid.JumpPower = 0
-   v.Humanoid:ChangeState(14)
-   y.Humanoid:ChangeState(14)
+   v.Humanoid:ChangeState(11)
+   y.Humanoid:ChangeState(11)
    if v.Humanoid:FindFirstChild("Animator") then
        v.Humanoid.Animator:Destroy()
    end
