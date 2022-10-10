@@ -6210,12 +6210,11 @@ local Tab2 = Page:CreateSection({
     Side = "Right" -- ตำแหน่ง Left/Right
 })
 
-local Tab3 = Page:CreateSection({
-    Name = "Farm Elite Player w1", -- ชื่อ
-    Side = "Left" -- ตำแหน่ง Left/Right
+
+local set1 = Page:CreateSection({
+    Name = "Setting Farm", -- ชื่อ
+    Side = "Right" -- ตำแหน่ง Left/Right
 })
-
-
 
 ----------------------------------------
 
@@ -6252,13 +6251,8 @@ local Misc = Misc1:CreateSection({
 
 
 ----------------------------------------------
-local set = PepsiUi:CreateTab({
-    Name = "Setting"
-})
-local set1 = set:CreateSection({
-    Name = "Setting Farm", -- ชื่อ
-    Side = "Left" -- ตำแหน่ง Left/Right
-})
+
+
 
 -----------------------------------------------
 
