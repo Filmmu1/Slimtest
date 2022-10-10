@@ -6125,10 +6125,7 @@ end
                     LvQuest = 1
                     NameQuest = "SkyExp1Quest"
                     CFrameMon = CFrame.new(-4703.18017578125, 845.2769775390625, -1888.7088623046875)
-                    CFrameQuest = CFrame.new(-7860.59716796875, 5545.49169921875, -380.5501403808594)
-                    if _G.AutoFarm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
-                    end
+                    CFrameQuest = CFrame.new(-4720.93896484375, 845.4024658203125, -1951.8692626953125)
                 elseif Lv == 475 or Lv <= 524 then
                     Mon = "Shanda [Lv. 475]"
                     NameMon = "Shanda"
