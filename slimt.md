@@ -6654,16 +6654,74 @@ end
 
 ------------------------------------------------------
 
+
+
+
+
+
+
+
 set1:AddToggle({
-    Name = "Delete Effect Mon",
+    Name = "Remove Animetion",
 	Value = true, -- ปรับค่าToggle true/false or Config
     Callback = function(t)
-        _G.Effectdel = t
-        while _G.Effectdel do wait()
-            game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
-            end
-    end
+		_G.Remove_Animetion = t
+		end
+	})
+
+
+	local Client = game.Players.LocalPlayer
+	local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
+	local STOPRL = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)
+	spawn(function()
+		while task.wait() do
+			if _G.Remove_Animetion then
+				pcall(function()
+					if not shared.orl then shared.orl = STOPRL.wrapAttackAnimationAsync end
+					if not shared.cpc then shared.cpc = STOP.play end
+						STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
+						local Hits = STOPRL.getBladeHits(b,c,d)
+						if Hits then
+							STOP.play = function() end
+							a:Play(0.01,0.01,0.01)
+							func(Hits)
+							STOP.play = shared.cpc
+							wait(a.length * 0.5)
+							a:Stop()
+						end
+					end
+				end)
+			end
+		end
+	end)
+
+
+
+
+
+
+set1:AddToggle({
+    Name = "Delete Effect",
+	Value = true, -- ปรับค่าToggle true/false or Config
+    Callback = function(t)
+		_G.Remove_Effect = t
+		end
 })
+
+
+spawn(function()
+	game:GetService('RunService').Stepped:Connect(function()
+		if _G.Remove_Effect then
+			for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+				if v.Name == "CurvedRing" or v.Name == "SwordSlash" or v.Name == "Sounds" or v.Name == "SlashHit" or v.Name == "DamageCounter" then--or v.Name == "SlashHit"
+					v:Destroy() 
+				end
+			end
+		end
+	end)
+end)
+
+
 
 set1:AddToggle({
     Name = "Delete Damage",
