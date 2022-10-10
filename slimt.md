@@ -6290,7 +6290,7 @@ Tab1:AddToggle({
 
 Tab1:AddToggle({
     Name = "Fast Attack",
-	Value = true, -- ปรับค่าToggle true/false or Config
+	Value = _G.SuperFastMode, -- ปรับค่าToggle true/false or Config
     Callback = function(t)
      local SuperFastMode = value
           _G.SuperFastMode = value
