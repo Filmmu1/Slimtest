@@ -6451,8 +6451,8 @@ for x,y in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 if v.Name == Mon then
     if y.Name == Mon then
    v.HumanoidRootPart.CFrame = y.HumanoidRootPart.CFrame
-   v.HumanoidRootPart.Size = Vector3.new(5,5,5)
-   y.HumanoidRootPart.Size = Vector3.new(5,5,5)
+   v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+   y.HumanoidRootPart.Size = Vector3.new(50,50,50)
    v.HumanoidRootPart.Transparency = 1
    v.HumanoidRootPart.CanCollide = false
    y.HumanoidRootPart.CanCollide = false
@@ -6465,9 +6465,6 @@ if v.Name == Mon then
    if v.Humanoid:FindFirstChild("Animator") then
        v.Humanoid.Animator:Destroy()
    end
-   if y.Humanoid:FindFirstChild("Animator") then
-       y.Humanoid.Animator:Destroy()
-       end
    if sethiddenproperty then
      sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
 end
