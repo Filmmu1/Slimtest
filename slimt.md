@@ -6313,7 +6313,7 @@ function AttackNoCD()
      local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
          plr.Character,
          {plr.Character.HumanoidRootPart},
-         60
+         30
      )
      local cac = {}
      local hash = {}
